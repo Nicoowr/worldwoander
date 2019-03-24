@@ -1,5 +1,6 @@
 const initialState = {
     userMail: "",
+    userId: "",
     preferences: {
         food: false,
         drink: false,
@@ -21,7 +22,8 @@ export const updateUserState = (state = initialState, action) => {
             console.log(action.value)
             nextState = {
                 ...state,
-                userMail: action.value
+                userMail: action.value,
+                userId: action.userId,
             };
             console.log("next state: ", nextState)
             return nextState || state;

@@ -1,6 +1,13 @@
 import * as React from "react";
 import {Image, View, StyleSheet, Switch} from 'react-native'
-import {ToggleButtonInterface} from "../../Resources/Interfaces";
+
+export interface ToggleButtonInterface {
+  onIconPress: any
+  pictureStyle: object,
+  source: string,
+  value: boolean
+  name: string,
+}
 
 class ToggleButton extends React.Component<ToggleButtonInterface> {
     constructor(props: ToggleButtonInterface){

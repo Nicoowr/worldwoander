@@ -1,18 +1,19 @@
 import * as React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
 import HomeScreen from "./HomeScreen";
 import {connect, DispatchProp} from "react-redux";
-import {Preferences, TravelPreferences} from "../Resources/Interfaces";
+import {Preferences, TravelPreferences} from "../../../Resources/Interfaces";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export interface HomeScreenContainerProps {
     preferences: Preferences
     travelPreferences: TravelPreferences
     userMail: string
+    navigation: any;
 }
 
 class HomeScreenContainer extends React.Component<HomeScreenContainerProps & DispatchProp> {
-    constructor(props) {
-        super(props)
+    onDrawerIconPress = () => {
+        this.props.navigation.openDrawer();
     }
 
     onIconPress = (id) => {
@@ -38,6 +39,10 @@ class HomeScreenContainer extends React.Component<HomeScreenContainerProps & Dis
         this.props.dispatch(action)
     };
 
+    onGoPress = () => {
+        this.props.navigation.navigate('Map')
+    }
+
     render() {
         return(
             <HomeScreen
@@ -45,6 +50,8 @@ class HomeScreenContainer extends React.Component<HomeScreenContainerProps & Dis
                 travelPreferences={this.props.travelPreferences}
                 userMail={this.props.userMail}
                 onIconPress={this.onIconPress}
+                onGoPress={this.onGoPress}
+                onDrawerIconPress={this.onDrawerIconPress}
             />
         );
     }

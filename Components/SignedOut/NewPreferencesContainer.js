@@ -84,7 +84,7 @@ class NewPreferencesContainer extends React.Component {
         this.props.dispatch(action);
 
         //await createUserPreferences({email: this.props.userMail, preferences: newPreferences});
-        await this.props.navigation.navigate("Home")
+        await this.props.navigation.navigate("SignedIn")
     };
 
     render() {

@@ -22,11 +22,14 @@ export interface TravelPreferences {
     travelWithPeople: boolean
 }
 
-export interface ToggleButtonInterface {
-    onIconPress: any
-    buttonStyle: object,
-    pictureStyle: object,
-    source: string,
-    value: boolean
-    name: string,
+export interface Poi {
+    id_poi: string,
+    title: string,
+    type: string,
+    latitude: string,
+    longitude: string,
+    country: string,
+    description: string,
+    imageLink: string,
+    timeStart: string
 }

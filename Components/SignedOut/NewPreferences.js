@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, TouchableOpacity, View, Image, Text} from "react-native";
 import ToggleButton from '../Generic/ToggleButton'
 import {images} from '../../Images/ImagesPath'
+import {mainContainer} from "../../Resources/styles";
 
 class NewPreferences extends React.Component {
     render() {
@@ -69,12 +70,7 @@ class NewPreferences extends React.Component {
 
 const styles = StyleSheet.create(
     {
-        mainContainer: {
-            flex: 1,
-            backgroundColor: '#ff790a',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
+        mainContainer,
         newPreferencesContainer: {
             padding: 10,
             backgroundColor: '#FFFFFF',
